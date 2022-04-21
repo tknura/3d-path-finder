@@ -1,4 +1,4 @@
-import { styled, Theme } from 'baseui'
+import { styled } from 'baseui'
 
 export interface SpacerProps {
   $orientation?: 'horizontal' | 'vertical'

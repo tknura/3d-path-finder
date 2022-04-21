@@ -16,6 +16,7 @@
     "@types/styletron-react": "^5.0.3",
     "@types/styletron-standard": "^2.0.2",
     "baseui": "^10.12.1",
+    "constate": "^3.3.0",
     "eslint": "^8.12.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -51,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@types/three": "^0.139.0",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "eslint-config-airbnb-typescript": "^16.2.0",
