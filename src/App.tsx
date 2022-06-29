@@ -1,4 +1,5 @@
 import { styled } from 'baseui'
+import { Canvas } from '@react-three/fiber'
 import { LibraryProviders } from 'components/providers/LibraryProviders'
 import { AlgorithmProperties } from 'components/properties/AlgorithmProperties'
 import { Controls } from 'components/properties/Controls'
@@ -52,7 +53,9 @@ const App = () => {
       <ContextProviders>
         <RootContainer>
           <SceneContainer $fullWidth={isMobile}>
-            <Scene />
+            <Canvas>
+              <Scene />
+            </Canvas>
           </SceneContainer>
           {isMobile ? (
             <>

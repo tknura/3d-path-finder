@@ -1,9 +1,10 @@
+import { useAtom } from 'jotai'
 import { Heading, HeadingLevel } from 'baseui/heading'
 import { Vector3Input } from 'components/inputs/vector3-input/Vector3Input'
-import { useSceneSize } from 'components/providers/context/ScenePropertiesProvider'
+import { sceneAtoms } from 'store/scene'
 
 export const SceneProperties = () => {
-  const { size, setSize } =  useSceneSize()
+  const [size, setSize] =  useAtom(sceneAtoms.sizeAtom)
 
   return (
     <HeadingLevel>

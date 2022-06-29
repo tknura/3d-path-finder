@@ -14,9 +14,9 @@ export const Boundaries = ({
     return null
   }
   const [boundarySizeX, boundarySizeY, boundarySizeZ] = boundarySize
-  const side1Size = [boundarySizeX, boundarySizeY] as const
-  const side2Size = [boundarySizeZ, boundarySizeY] as const
-  const topBottomSize = [boundarySizeX, boundarySizeZ] as const
+  const side1Size = [boundarySizeX + 1, boundarySizeY + 1] as const
+  const side2Size = [boundarySizeZ + 1, boundarySizeY + 1] as const
+  const topBottomSize = [boundarySizeX + 1, boundarySizeZ + 1] as const
 
 
   const halfBoundarySizeX = boundarySize[0] / 2
@@ -28,33 +28,33 @@ export const Boundaries = ({
       {/*  Sides */}
       <BoundaryPlane
         size={side1Size}
-        position={[0, 0, -halfBoundarySizeZ]}
+        position={[0, 0, -halfBoundarySizeZ - 0.5]}
       />
       <BoundaryPlane
         size={side1Size}
-        position={[0, 0, halfBoundarySizeZ]}
+        position={[0, 0, halfBoundarySizeZ + 0.5]}
         rotation={[0, -Math.PI, 0]}
       />
       <BoundaryPlane
         size={side2Size}
-        position={[halfBoundarySizeX, 0, 0]}
+        position={[halfBoundarySizeX + 0.5, 0, 0]}
         rotation={[0, - Math.PI / 2, 0]} 
       />
       <BoundaryPlane
         size={side2Size}
-        position={[-halfBoundarySizeX, 0, 0]}
+        position={[-halfBoundarySizeX - 0.5, 0, 0]}
         rotation={[0, Math.PI / 2, 0]} 
       />
       {/* Top */}
       <BoundaryPlane
         size={topBottomSize}
-        position={[0, halfBoundarySizeY, 0]}
+        position={[0, halfBoundarySizeY + 0.5, 0]}
         rotation={[Math.PI / 2, 0, 0]} 
       />
       {/* Bottom */}
       <BoundaryPlane
         size={topBottomSize}
-        position={[0, -halfBoundarySizeY, 0]}
+        position={[0, -halfBoundarySizeY - 0.5, 0]}
         rotation={[-Math.PI / 2, 0, 0]} 
       />
     </group>

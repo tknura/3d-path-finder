@@ -1,3 +1,4 @@
+import React from 'react'
 import { FormControl } from 'baseui/form-control'
 import { Input } from 'baseui/input'
 import { LabelMedium } from 'baseui/typography'
@@ -38,7 +39,7 @@ export const Vector3Input = ({
         {['x', 'y', 'z'].map((coordinate, index, array) => {
           const isNotLast = index !== array.length - 1
           return (
-            <>
+            <React.Fragment key={coordinate}>
               <div>
                 <FormControl label={() => coordinate}>
                   <Input
@@ -51,7 +52,7 @@ export const Vector3Input = ({
                 </FormControl>
               </div>
               {isNotLast && <Spacer />}
-            </>
+            </React.Fragment>
           )
         })}
       </FlexContainer>
